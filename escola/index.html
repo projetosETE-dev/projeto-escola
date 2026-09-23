@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>ETE Luiz Alves Lacerda</title>
+    <title>Início - ETE Luiz Alves Lacerda</title>
     <link rel="stylesheet" href="static.css">
 </head>
 <body>
@@ -12,12 +12,13 @@
         <h1>ETE Luiz Alves Lacerda</h1>
         <nav>
             <ul>
-                <li><a href="index.html">Início</a></li>
+                <li><a href="index.html" aria-current="page">Início</a></li>
                 <li><a href="cursos.html">Cursos</a></li>
                 <li><a href="noticia.html">Notícias</a></li>
                 <li><a href="contato.html">Contato</a></li>
                 <li><a href="login.html">Login</a></li>
             </ul>
+            <button class="tema" type="button" aria-label="Alternar tema claro/escuro">◐</button>
         </nav>
     </header>
 
@@ -27,10 +28,15 @@
                 <h2>ETE LUIZ ALVES LACERDA</h2>
                 <h3>Ensino que transforma vidas</h3>
                 <p>Conheça nossos cursos e prepare-se para o mercado de trabalho com excelência.</p>
-                <a href="cursos.html" style="display:inline-block; background-color:#134074; color:#fff; padding:0.6rem 1.2rem; text-decoration:none; border-radius:5px;">Conheça nossos cursos</a>
+                <a class="btn" href="cursos.html">Conheça nossos cursos</a>
+                <div class="stats">
+                    <div><b>2</b><span>cursos técnicos</span></div>
+                    <div><b>3 anos</b><span>de formação</span></div>
+                    <div><b>100%</b><span>integrado ao Ensino Médio</span></div>
+                </div>
             </div>
         </section>
-        
+
         <section class="Motivo" id="motivos">
             <h2>Por que escolher nossa escola?</h2>
             <div>
@@ -48,12 +54,11 @@
                 </div>
             </div>
         </section>
-        
+
         <section>
             <h2>Destaques Técnicos</h2>
-            <p>
-                Nossos cursos técnicos integrados ao ensino médio unem teoria e prática, oferecendo formação sólida nas áreas mais demandadas pelo mercado atual. Visite nossa página de cursos para ver todas as opções disponíveis.
-            </p>
+            <p>Nossos cursos técnicos integrados ao ensino médio unem teoria e prática, oferecendo formação sólida nas áreas mais demandadas pelo mercado atual. Visite nossa página de cursos para ver todas as opções disponíveis.</p>
+            <p>Novidade: <a href="noticia.html">inscrições abertas para o Processo Seletivo 2027</a>.</p>
         </section>
     </main>
 
@@ -61,5 +66,6 @@
         <p>&copy; 2026 ETE Luiz Alves Lacerda. Todos os direitos reservados.</p>
     </footer>
 
+    <script src="script.js"></script>
 </body>
 </html>

@@ -13,11 +13,12 @@
         <nav>
             <ul>
                 <li><a href="index.html">Início</a></li>
-                <li><a href="cursos.html">Cursos</a></li>
+                <li><a href="cursos.html" aria-current="page">Cursos</a></li>
                 <li><a href="noticia.html">Notícias</a></li>
                 <li><a href="contato.html">Contato</a></li>
                 <li><a href="login.html">Login</a></li>
             </ul>
+            <button class="tema" type="button" aria-label="Alternar tema claro/escuro">◐</button>
         </nav>
     </header>
 
@@ -27,8 +28,9 @@
             <p>Conheça as formações técnicas oferecidas pela nossa instituição.</p>
         </section>
 
-        <section>
+        <section class="curso">
             <h3>Desenvolvimento de Sistemas</h3>
+            <span class="tag">Tecnologia</span><span class="tag">3 anos</span>
             <p>Aprenda a programar, criar aplicativos, desenvolver sistemas web e gerenciar bancos de dados para o mercado de tecnologia.</p>
             <ul>
                 <li><strong>Modalidade:</strong> Integrado ao Ensino Médio</li>
@@ -36,13 +38,19 @@
             </ul>
         </section>
 
-        <section>
+        <section class="curso">
             <h3>Logística</h3>
+            <span class="tag">Gestão</span><span class="tag">3 anos</span>
             <p>Estudo de cadeia de suprimentos, controle de estoque, transportes e processos de distribuição de mercadorias.</p>
             <ul>
                 <li><strong>Modalidade:</strong> Integrado ao Ensino Médio</li>
                 <li><strong>Duração:</strong> 3 anos</li>
             </ul>
+        </section>
+
+        <section>
+            <h3>Ficou com dúvida?</h3>
+            <p>Fale com a secretaria pela <a href="contato.html">página de contato</a>.</p>
         </section>
     </main>
 
@@ -50,5 +58,6 @@
         <p>&copy; 2026 ETE Luiz Alves Lacerda. Todos os direitos reservados.</p>
     </footer>
 
+    <script src="script.js"></script>
 </body>
 </html>

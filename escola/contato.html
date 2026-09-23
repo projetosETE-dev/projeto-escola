@@ -15,9 +15,10 @@
                 <li><a href="index.html">Início</a></li>
                 <li><a href="cursos.html">Cursos</a></li>
                 <li><a href="noticia.html">Notícias</a></li>
-                <li><a href="contato.html">Contato</a></li>
+                <li><a href="contato.html" aria-current="page">Contato</a></li>
                 <li><a href="login.html">Login</a></li>
             </ul>
+            <button class="tema" type="button" aria-label="Alternar tema claro/escuro">◐</button>
         </nav>
     </header>
 
@@ -32,14 +33,14 @@
             <ul>
                 <li><strong>Endereço:</strong> Rua Exemplo, 123 - Centro, Cidade - PE</li>
                 <li><strong>Telefone:</strong> (81) 0000-0000</li>
-                <li><strong>E-mail:</strong> contato@eteluizalves.com.br</li>
+                <li><strong>E-mail:</strong> <a href="mailto:contato@eteluizalves.com.br">contato@eteluizalves.com.br</a></li>
                 <li><strong>Horário de Atendimento:</strong> Segunda a Sexta, das 08h às 17h</li>
             </ul>
         </section>
 
         <section>
             <h3>Envie uma Mensagem</h3>
-            <form action="#" method="POST">
+            <form action="#" method="POST" data-ok="Mensagem enviada! Responderemos em breve.">
                 <div>
                     <label for="nome">Nome:</label>
                     <input type="text" id="nome" name="nome" required>
@@ -54,10 +55,12 @@
                 </div>
                 <div>
                     <label for="mensagem">Mensagem:</label>
-                    <textarea id="mensagem" name="mensagem" rows="5" required></textarea>
+                    <textarea id="mensagem" name="mensagem" rows="5" maxlength="500" required></textarea>
+                    <span id="cont">0/500</span>
                 </div>
                 <button type="submit">Enviar Mensagem</button>
             </form>
+            <p class="msg" role="status" hidden></p>
         </section>
     </main>
 
@@ -65,5 +68,6 @@
         <p>&copy; 2026 ETE Luiz Alves Lacerda. Todos os direitos reservados.</p>
     </footer>
 
+    <script src="script.js"></script>
 </body>
 </html>

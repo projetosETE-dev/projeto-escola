@@ -16,30 +16,83 @@
                 <li><a href="cursos.html">Cursos</a></li>
                 <li><a href="noticia.html">Notícias</a></li>
                 <li><a href="contato.html">Contato</a></li>
-                <li><a href="login.html">Login</a></li>
+                <li><a href="login.html" aria-current="page">Login</a></li>
             </ul>
+            <button class="tema" type="button" aria-label="Alternar tema claro/escuro">◐</button>
         </nav>
     </header>
 
     <main>
         <section>
             <h2>Área do Aluno / Professor</h2>
-            <p>Faça login para acessar o sistema acadêmico.</p>
+            <p>Entre no sistema acadêmico ou crie sua conta.</p>
         </section>
 
         <section>
-            <form action="#" method="POST">
-                <div>
-                    <label for="usuario">Usuário (E-mail ou Matrícula):</label>
-                    <input type="text" id="usuario" name="usuario" required>
-                </div>
-                <div>
-                    <label for="senha">Senha:</label>
-                    <input type="password" id="senha" name="senha" required>
-                </div>
-                <button type="submit">Entrar</button>
-            </form>
-            <p style="margin-top: 1rem;"><a href="#" style="color: var(--secondary-color);">Esqueceu sua senha?</a></p>
+            <div class="abas" role="tablist">
+                <button type="button" role="tab" data-p="p-entrar" aria-selected="true">Entrar</button>
+                <button type="button" role="tab" data-p="p-cadastro" aria-selected="false" tabindex="-1">Registre-se</button>
+            </div>
+
+            <div class="painel" id="p-entrar" role="tabpanel">
+                <form id="f-entrar" action="#" method="POST" data-custom>
+                    <div>
+                        <label for="usuario">Usuário (E-mail ou Matrícula):</label>
+                        <input type="text" id="usuario" name="usuario" autocomplete="username" required>
+                    </div>
+                    <div>
+                        <label for="senha">Senha:</label>
+                        <input type="password" id="senha" name="senha" autocomplete="current-password" required>
+                        <button type="button" class="ver" data-alvo="senha">Mostrar senha</button>
+                    </div>
+                    <div class="check">
+                        <input type="checkbox" id="lembrar" name="lembrar">
+                        <label for="lembrar">Manter conectado</label>
+                    </div>
+                    <button type="submit">Entrar</button>
+                </form>
+                <p class="msg" role="status" hidden></p>
+                <p class="troca"><a href="#">Esqueceu sua senha?</a> &nbsp;|&nbsp; Não tem conta? <a href="#cadastro" data-abrir="p-cadastro">Registre-se</a></p>
+            </div>
+
+            <div class="painel" id="p-cadastro" role="tabpanel" hidden>
+                <form id="f-cadastro" action="#" method="POST" data-custom>
+                    <div>
+                        <label for="nome">Nome completo:</label>
+                        <input type="text" id="nome" name="nome" autocomplete="name" required>
+                    </div>
+                    <div>
+                        <label for="nemail">E-mail:</label>
+                        <input type="email" id="nemail" name="email" autocomplete="email" required>
+                    </div>
+                    <div>
+                        <label for="tipo">Eu sou:</label>
+                        <select id="tipo" name="tipo" required>
+                            <option value="aluno">Aluno(a)</option>
+                            <option value="professor">Professor(a)</option>
+                        </select>
+                    </div>
+                    <div>
+                        <label for="nsenha">Senha:</label>
+                        <input type="password" id="nsenha" name="senha" autocomplete="new-password" required>
+                        <div class="forca" data-n="0"><i></i></div>
+                        <span id="ftxt">Use 8+ caracteres, maiúscula, número e símbolo.</span>
+                        <button type="button" class="ver" data-alvo="nsenha">Mostrar senha</button>
+                    </div>
+                    <div>
+                        <label for="csenha">Confirmar senha:</label>
+                        <input type="password" id="csenha" name="csenha" autocomplete="new-password" required>
+                    </div>
+                    <div class="check">
+                        <input type="checkbox" id="termos" name="termos" required>
+                        <label for="termos">Concordo com o uso dos meus dados pela escola</label>
+                    </div>
+                    <button type="submit">Criar conta</button>
+                </form>
+                <p class="erro" role="alert" hidden></p>
+                <p class="msg" role="status" hidden></p>
+                <p class="troca">Já tem conta? <a href="#" data-abrir="p-entrar">Entre</a></p>
+            </div>
         </section>
     </main>
 
@@ -47,5 +100,6 @@
         <p>&copy; 2026 ETE Luiz Alves Lacerda. Todos os direitos reservados.</p>
     </footer>
 
+    <script src="script.js"></script>
 </body>
 </html>
