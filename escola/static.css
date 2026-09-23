@@ -1,0 +1,329 @@
+/* ==========================================================================
+   1. VARIÁVEIS E CORES INSTITUCIONAIS (ETE / GOVERNO DE PERNAMBUCO)
+   ========================================================================== */
+:root {
+    /* Cores Principais */
+    --primary-color: #134074;      /* Azul Institucional ETE */
+    --primary-dark: #0b2647;       /* Azul Escuro para cabeçalhos e rodapé */
+    --secondary-color: #0077b6;    /* Azul Secundário (usado em links e destaques) */
+    --accent-color: #fdce00;       /* Amarelo Pernambuco para detalhes e bordas */
+    
+    /* Neutros */
+    --bg-body: #f4f6f8;            /* Fundo levemente cinza para não cansar a vista */
+    --bg-card: #ffffff;            /* Fundo dos cards e seções */
+    --text-color: #2b2d42;         /* Texto principal com alto contraste */
+    --text-muted: #5c677d;        /* Texto secundário / datas */
+    --border-color: #d8e2dc;      /* Bordas suaves */
+}
+
+/* ==========================================================================
+   2. RESET BÁSICO E TIPOGRAFIA
+   ========================================================================== */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+    background-color: var(--bg-body);
+    color: var(--text-color);
+    line-height: 1.6;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
+
+/* ==========================================================================
+   3. CABEÇALHO E NAVEGAÇÃO (Comum a todas as páginas)
+   ========================================================================== */
+header {
+    background-color: var(--primary-color);
+    color: #ffffff;
+    padding: 1.25rem 2rem;
+    border-bottom: 4px solid var(--accent-color);
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.08);
+}
+
+header h1 {
+    font-size: 1.6rem;
+    font-weight: 700;
+    letter-spacing: 0.5px;
+    margin-bottom: 0.75rem;
+}
+
+nav ul {
+    list-style: none;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1.25rem;
+}
+
+nav a {
+    color: #ffffff;
+    text-decoration: none;
+    font-weight: 600;
+    font-size: 0.95rem;
+    padding: 0.3rem 0.6rem;
+    border-radius: 4px;
+    transition: background-color 0.2s ease;
+}
+
+nav a:hover {
+    background-color: rgba(255, 255, 255, 0.15);
+}
+
+/* ==========================================================================
+   4. ESTRUTURA PRINCIPAL (MAIN)
+   ========================================================================== */
+main {
+    flex: 1;
+    width: 92%;
+    max-width: 960px;
+    margin: 2rem auto;
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+}
+
+section {
+    background-color: var(--bg-card);
+    padding: 1.75rem;
+    border-radius: 6px;
+    border: 1px solid var(--border-color);
+}
+
+/* Títulos */
+h2 {
+    color: var(--primary-color);
+    font-size: 1.4rem;
+    font-weight: 700;
+    margin-bottom: 0.8rem;
+    border-bottom: 2px solid var(--bg-body);
+    padding-bottom: 0.4rem;
+}
+
+h3 {
+    color: var(--primary-dark);
+    font-size: 1.15rem;
+    margin-top: 1rem;
+    margin-bottom: 0.4rem;
+}
+
+p {
+    color: var(--text-color);
+    margin-bottom: 0.8rem;
+}
+
+p:last-child {
+    margin-bottom: 0;
+}
+
+/* Listas gerais */
+ul {
+    margin-left: 1.2rem;
+    margin-bottom: 1rem;
+}
+
+li {
+    margin-bottom: 0.3rem;
+}
+
+/* ==========================================================================
+   5. PÁGINA INÍCIO (index.html)
+   ========================================================================== */
+#inicio {
+    background-color: #ffffff;
+    border-left: 5px solid var(--primary-color);
+}
+
+#inicio h2 {
+    border-bottom: none;
+    font-size: 1.8rem;
+}
+
+#inicio h3 {
+    color: var(--text-muted);
+    font-weight: 500;
+    margin-top: -0.4rem;
+    margin-bottom: 1rem;
+}
+
+/* Seção de Motivos */
+.Motivo #motivos,
+#motivos > div {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+    gap: 1.25rem;
+    margin-top: 1rem;
+}
+
+#motivos > div > div {
+    background-color: var(--bg-body);
+    padding: 1.25rem;
+    border-radius: 6px;
+    border-top: 3px solid var(--secondary-color);
+}
+
+#motivos h3 {
+    margin-top: 0;
+    font-size: 1.1rem;
+}
+
+/* ==========================================================================
+   6. PÁGINA DE NOTÍCIAS (noticia.html)
+   ========================================================================== */
+article {
+    background-color: var(--bg-card);
+    padding: 1.5rem;
+    border-radius: 6px;
+    border: 1px solid var(--border-color);
+    border-left: 4px solid var(--accent-color);
+}
+
+article h3 {
+    margin-top: 0;
+    color: var(--primary-color);
+    font-size: 1.2rem;
+}
+
+article small {
+    display: block;
+    color: var(--text-muted);
+    font-size: 0.85rem;
+    margin-bottom: 0.75rem;
+}
+
+/* ==========================================================================
+   7. FORMULÁRIOS (login.html e contato.html)
+   ========================================================================== */
+form {
+    display: flex;
+    flex-direction: column;
+    gap: 1.2rem;
+    max-width: 480px;
+    margin-top: 1rem;
+}
+
+form div {
+    display: flex;
+    flex-direction: column;
+    gap: 0.35rem;
+}
+
+label {
+    font-weight: 600;
+    font-size: 0.9rem;
+    color: var(--primary-dark);
+}
+
+input[type="text"],
+input[type="email"],
+input[type="password"],
+textarea {
+    width: 100%;
+    padding: 0.65rem 0.8rem;
+    border: 1px solid #c0c7d0;
+    border-radius: 4px;
+    font-family: inherit;
+    font-size: 0.95rem;
+    background-color: #fff;
+    transition: border-color 0.2s ease;
+}
+
+input:focus,
+textarea:focus {
+    outline: none;
+    border-color: var(--primary-color);
+    box-shadow: 0 0 0 3px rgba(19, 64, 116, 0.12);
+}
+
+button[type="submit"] {
+    background-color: var(--primary-color);
+    color: #ffffff;
+    border: none;
+    padding: 0.75rem 1.5rem;
+    font-size: 0.95rem;
+    font-weight: 600;
+    border-radius: 4px;
+    cursor: pointer;
+    align-self: flex-start;
+    transition: background-color 0.2s ease;
+}
+
+button[type="submit"]:hover {
+    background-color: var(--primary-dark);
+}
+
+/* ==========================================================================
+   8. LINKS E ELEMENTOS INLINE
+   ========================================================================== */
+a {
+    color: var(--secondary-color);
+    text-decoration: underline;
+}
+
+a:hover {
+    color: var(--primary-dark);
+}
+
+/* Suporte aos botões inline presentes na index */
+a[style*="display:inline-block"] {
+    background-color: var(--primary-color) !important;
+    border-radius: 4px !important;
+    font-weight: 600;
+    transition: background-color 0.2s ease;
+}
+
+a[style*="display:inline-block"]:hover {
+    background-color: var(--primary-dark) !important;
+}
+
+/* ==========================================================================
+   9. RODAPÉ
+   ========================================================================== */
+footer {
+    background-color: var(--primary-dark);
+    color: #ffffff;
+    text-align: center;
+    padding: 1.25rem 1rem;
+    margin-top: auto;
+    font-size: 0.85rem;
+    border-top: 3px solid var(--accent-color);
+}
+
+footer p {
+    color: #d0d7de;
+    margin: 0;
+}
+
+/* ==========================================================================
+   10. RESPONSIVIDADE PARA DISPOSITIVOS MÓVEIS
+   ========================================================================== */
+@media (max-width: 600px) {
+    header {
+        padding: 1rem;
+    }
+
+    nav ul {
+        gap: 0.6rem;
+    }
+
+    main {
+        width: 95%;
+        margin: 1rem auto;
+    }
+
+    section {
+        padding: 1.25rem;
+    }
+
+    form {
+        max-width: 100%;
+    }
+
+    button[type="submit"] {
+        width: 100%;
+    }
+}
